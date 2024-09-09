@@ -1,0 +1,179 @@
+main{
+  top: 0%;
+}
+.buttonsMenu{
+     
+  width: 60%;
+  height: 14%;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+
+  background-color: #fcfdfd; 
+  color: rgb(0, 0, 0);
+
+  border-radius: 10px 10px 10px 10px;
+
+  left: 20%;
+
+  
+
+  
+}
+
+.buttonsMenu:hover {
+  background-color:rgb(142, 137, 222);
+  color: rgb(245, 245, 245);
+}
+
+#buttonCadastro{
+  
+  position: absolute;
+  top: 45%;
+  z-index: 999; 
+  left: 75%;
+}
+
+
+#buttonLogin{
+ 
+  position: absolute;
+  top: 45%;
+  z-index: 999; 
+  left: 70%;
+}
+
+
+
+#divBarra{
+  position: absolute;
+  left: 0%;
+  top: 15%;
+  height: 60%;
+  width: 100%;
+  z-index: 0;
+  background-color: #ffffff;
+
+  border: 12px solid 5759b6;
+  
+
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+#logoGrande{
+  position: absolute;
+  left: 50%;
+  top: 29%;
+
+  z-index: 1;
+
+  scale: 150%;
+ 
+
+
+}
+#telaDeslogado{
+
+  top: 16%;
+
+}
+.welcome-box {
+  position: absolute;
+  left: 12%;
+  top: 16%;
+  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  /* border: 12px solid;  */
+  text-align: center;
+  width: 500px;
+  height: 540px;
+  
+}
+.welcome-box p{
+  font-size: 30px;
+ 
+}
+
+.welcome-box #buttonCadastro{
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 25%;
+  z-index: 999; 
+
+  left: 20%;
+ 
+
+}
+
+.welcome-box #buttonLogin{
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 58%;
+  z-index: 999; 
+
+  left: 20%;
+  
+
+}
+
+.welcome-box #buttonVisitante{
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 85%;
+  z-index: 999; 
+  left: 35%;
+
+}
+
+
+.welcome-box #buttonJogar{
+
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 60%;
+  z-index: 999; 
+  
+
+
+ 
+}
+
+.welcome-box #buttonContinuarSave{
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 40%;
+  z-index: 999; 
+  
+
+
+
+ 
+}
+
+.welcome-box #buttonDeslogar{
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.8;
+  position: absolute;
+  top: 80%;
+  z-index: 999; 
+  
+
+ 
+
+ 
+}

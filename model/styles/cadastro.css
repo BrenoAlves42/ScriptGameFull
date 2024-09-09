@@ -1,0 +1,133 @@
+main{
+    top: 0%;
+}
+#divBarra{
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    height: 60%;
+    width: 100%;
+    z-index: 0;
+    background-color: #ffffff;
+  
+    border: 12px solid 5759b6;
+    
+  
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  
+  }
+  
+  #logoGrande{
+    position: absolute;
+    left: 50%;
+    top: 29%;
+  
+    z-index: 1;
+  
+    scale: 150%;
+   
+  
+  
+  }
+
+
+.formPrincipal{
+    position: absolute;
+    left: 12%;
+    top: 16%;
+
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    
+    max-width: 350px;
+    width: 50%;
+    z-index: 1000;
+    height: 50%;
+
+    border: 12px solid 5759b6;
+    
+  
+
+    
+}
+
+form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.formElementos {
+    margin-bottom: 15px;
+    
+}
+
+.formElementos label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.formElementos input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.formElementos input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#selectChar{
+    position: absolute;
+    left: 2%;
+}
+.radioSelectChar{
+    transform: scale(1.5);
+    margin-left: 50px;
+}
+
+.buttonCadastro {
+    position: absolute;
+
+    left: 25%;
+         
+    width: 60%;
+    height: 10%;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: #fcfdfd; 
+    color: rgb(0, 0, 0);
+
+    border-radius: 10px 10px 10px 10px;
+}
+
+#buttonHome{
+    left: 25%;
+    top: 90%;
+}
+
+.buttonCadastro:hover {
+    background-color:rgb(142, 137, 222);
+    color: rgb(245, 245, 245);
+}
+
+.cadastroInput::placeholder{
+    font-size: 12px;
+    color: red;
+}
+
+#erroGeral{
+    font-size: 12px;
+    color: red;
+}

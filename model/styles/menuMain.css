@@ -1,0 +1,184 @@
+body {
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    
+  
+  }
+  
+  #modal{
+  
+      position: fixed; 
+      z-index: 999; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+     
+  }
+  
+  #modalContent{
+  
+    position: absolute; 
+    z-index: 999; 
+    left: 30%;
+    top: 20%;
+    width: 40%; 
+    height: 40%; 
+    background-color: #ffffff;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #09152b;
+   
+  }
+  
+  #modalSpan{
+    position: absolute; 
+    z-index: 999; 
+    left: 1%;
+    top: 35%;
+    font-size: 200%;
+    font-weight: bolder;
+    color: #000000;
+  
+    text-align: center;
+  }
+  
+  main {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+  
+    width: 1980px;
+    height: 1000px;
+    margin: 0%;
+    overflow:hidden;
+    
+   
+  }
+  
+  
+  #mainHeader{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 1980px;
+    height: 10%;
+    background-color: #ffffff; 
+  }
+  
+  #logo{
+    position: absolute;
+    width: 15%;
+    height: 110%;
+    cursor: pointer;
+    
+    left: 19%;
+    top: 0%;
+
+    scale: 80%;
+    
+  }
+  #logoRe{
+    width: 32%;
+    height: 100%;
+    padding-left: 3%;
+    
+    
+  }
+  
+  .buttonsHeader{
+     
+    width: 4%;
+    height: 30%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  
+    background-color: #fcfdfd; 
+    color: rgb(0, 0, 0);
+  
+    border-radius: 10px 10px 10px 10px;
+  
+    
+  }
+  
+  .buttonsHeader:hover {
+    background-color:rgb(142, 137, 222);
+    color: rgb(245, 245, 245);
+  }
+  
+  #buttonHome{
+    position: absolute;
+    top: 45%;
+    z-index: 999; 
+    left: 80%;
+  }
+
+  
+  #buttonPerfil{
+    position: absolute;
+
+    top: 45%;
+    z-index: 999; 
+    left: 75%;
+
+  }
+
+  #menuDiv_buttons{
+    width: 1980px;
+    height: 1000px;
+    border: none;
+    font-size: 120%;
+  
+    position: absolute;
+    top: 0%;
+    z-index: 998; 
+    left: 0%;
+    background: white;
+    color: rgb(3, 3, 3);
+  
+    
+  }
+  
+  #notaDiv{
+    width: 1980px;
+    height: 1%;
+    border: none;
+    
+    padding-left: 1%;
+    padding-top: 2%;
+  
+    position: absolute;
+    top: 0%;
+    z-index: 999; 
+    left: 0%;
+    background-color: #011627;
+  
+    
+  }
+
+  #imgNota{
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    z-index: 1002;
+    height: 10%;
+    width: 6%;
+  
+    cursor: pointer;
+  }
+  
+  .hidden{
+    display: none;
+  }
+  
+  .disabled-button {
+    background-color: grey;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+    
