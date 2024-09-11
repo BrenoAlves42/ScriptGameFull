@@ -252,7 +252,7 @@ Blockly.common.defineBlocksWithJsonArray([
     "message0": "Esperar um turno",
     
     "previousStatement": null,
-    "nextStatement": null,
+    
     "colour": 300,
  },
 

@@ -93,9 +93,7 @@
             <div id="gameHeader">
 
             </div>
-            <div id="optionsMenuMapa">
-                
-            </div>
+    
             <div id = "optionsMenu">
                 <div id="radioSpeed" class="hidden">
                     <p>&nbsp;&nbsp;&nbsp;Velocidade do personagem:</p>

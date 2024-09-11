@@ -18,7 +18,8 @@ export class mapaCol{
             this.p4f4 = {x: this.d*2, y: this.d*10, width: this.d*7, height: this.d*2};
 
             this.p1f5 = {x: this.d*10, y: this.d*5, width: this.d*1, height: this.d*4};
-            this.p2f5 = {x: this.d*5, y: this.d*4, width: this.d*5, height: this.d*2};
+            this.p2f5 = {x: this.d*1, y: this.d*4, width: this.d*8, height: this.d*2};
+            this.p3f5 = {x: this.d*1, y: this.d*9, width: this.d*6, height: this.d*2};
 
 
             this.p1f8 = {x: this.d*8, y: this.d*5, width: this.d, height: this.d};

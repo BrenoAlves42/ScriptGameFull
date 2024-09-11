@@ -4,7 +4,7 @@ document.getElementById('voltarAval').addEventListener('click', function() {
 
 async function buscarFaseDb(){
 
-    var dataUrl = '/Scriptgame/model/php/read_fases.php';
+    var dataUrl = '../model/php/read_fases.php';
     
 
     let id1 = 0;

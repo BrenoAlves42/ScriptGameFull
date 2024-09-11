@@ -740,7 +740,10 @@ input[type="radio"].velRadio:checked {
 
   color: #757c83;
   background-color: #757c83;
-
+  user-select: none; 
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 
 

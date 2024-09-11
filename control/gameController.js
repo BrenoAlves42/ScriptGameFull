@@ -452,7 +452,7 @@ function toggleElements(){
         elements.optionsDisplay.classList.remove('hidden');
         elements.hpBar.classList.remove('hidden');
         elements.vidaBar.classList.remove('hidden');
-        elements.optionsMenuMapa.classList.add('hidden');
+        // elements.optionsMenuMapa.classList.add('hidden');
     }
     else{
         elements.canvas.classList.add('hidden');
@@ -464,7 +464,7 @@ function toggleElements(){
         elements.optionsDisplay.classList.add('hidden');
         elements.hpBar.classList.add('hidden');
         elements.vidaBar.classList.add('hidden');
-        elements.optionsMenuMapa.classList.remove('hidden');
+        // elements.optionsMenuMapa.classList.remove('hidden');
     }
     
     
@@ -556,10 +556,7 @@ elements.senhaText.addEventListener('click', function() {
         elements.senhaText.style.background = '#757c83'; 
         elements.senhaText.style.color = '#757c83'; 
 
-        
-
        
-
     }else{
 
         elements.senhaText.style.background = '#f0f8ff'; 
@@ -1909,6 +1906,11 @@ function avancarMapa05(mapLogic){
             hpRestante-=2;
  
         }
+
+        if(checkCol(colisoes.p3f5)){
+            resetMaps();
+            hpRestante--;
+        }
         
         if(posAtualFila < mapLogic.linha_comandos.length){      
             
@@ -1918,7 +1920,7 @@ function avancarMapa05(mapLogic){
                     avancarMapalDirecao(mapLogic, mapLogic.dir);   
                     break;
                 case "3":
-        
+
                     vxr = 0;
                     vxl = 0;
                     vy = 0;
@@ -2494,6 +2496,8 @@ function avancarMapa12(mapLogic){
                     case "3":
                         
                         if(checkCol(colisoes.o1f12)){
+
+                            console.log(mapLogic.cores_encontradas);
                       
                             if(mapLogic.cores_encontradas[0] == "a"){
                             
@@ -2539,6 +2543,7 @@ function avancarMapa12(mapLogic){
                     case "v":
                     case "a":
                         
+                        
                         if(mapLogic.quantPassosY == 4){
                             posAtualFila+=1;
                             
@@ -2550,8 +2555,8 @@ function avancarMapa12(mapLogic){
 
                         let posFila = posAtualFila;
                         posFila+=1;
-
-                        if(mapLogic.linha_comandos[posFila+=1] == "6"){
+                        
+                        if(mapLogic.linha_comandos[posFila] == "6"){
                             if(mapLogic.quantPassosX == 1){
                                 posAtualFila+=1;
                             }
@@ -2913,9 +2918,9 @@ function animar(){
         espinho.draw(elements.ctx);
     }
     // elements.ctx.fillStyle = 'black';
-    // let fase = colisoes.p1f13;
-    // let fase2 = colisoes.p2f13;
-    // let fase3 = colisoes.p3f13;
+    // let fase = colisoes.p1f5;
+    // let fase2 = colisoes.p2f5;
+    // let fase3 = colisoes.p3f5;
     // let fase4 = colisoes.p4f13;
     // let fase5 = colisoes.p5f8;
     // let fase6 = colisoes.p6f8;
@@ -2924,9 +2929,9 @@ function animar(){
     // let obj = colisoes.o1f13;
     // let obj2 = colisoes.o2f13;
     // let obj3 = colisoes.o3f13;
-    // elements.ctx.fillRect(fase.x, fase.y, 64, 64);
-    // elements.ctx.fillRect(fase2.x, fase2.y, 64, 64);
-    // elements.ctx.fillRect(fase3.x, fase3.y, 64, 64);
+    // elements.ctx.fillRect(fase.x, fase.y, fase.width, fase.height);
+    // elements.ctx.fillRect(fase2.x, fase2.y, fase2.width, fase2.height);
+    // elements.ctx.fillRect(fase3.x, fase3.y, fase3.width, fase3.height);
     // elements.ctx.fillRect(fase4.x, fase4.y, 64, 64);
     // elements.ctx.fillRect(fase5.x, fase5.y, 64, 64);
     // elements.ctx.fillRect(fase6.x, fase6.y, 64, 64);
@@ -3000,7 +3005,7 @@ function carregarFases(fase){
 
     }if(fase >= 8){
         
-        elements.checkOff11.src = "../model/src/checkOn.png";
+        elements.checkOff11.src = "./model/src/checkOn.png";
         elements.checkOff12.src = "../model/src/checkOn.png";
 
     }if(fase >=12){
@@ -3039,7 +3044,7 @@ function updateDb(){
 
         update = true;
         
-        var dataUpdateUrl = '/Scriptgame/model/php/update.php';
+        var dataUpdateUrl = '../model/php/update.php';
 
         let salvarFase = 0;
         if(currentMapa < mapaAtual){
@@ -3119,7 +3124,7 @@ function updateDbMorreu(){
     }
     
 
-    var dataUpdateUrl = '/Scriptgame/model/php/update.php';
+    var dataUpdateUrl = '../model/php/update.php';
 
     const data = {
 
@@ -3159,7 +3164,7 @@ function updateDbMorreu(){
 }
 
 async function fetchDados(){
-    var dataUrl = '/Scriptgame/model/php/read.php';
+    var dataUrl = '../model/php/read.php';
 
     let currentVidas = 0;
     let currentHp = 0;
@@ -3224,7 +3229,7 @@ fetchDados();
 
 async function buscarFaseDb(){
 
-    var dataUrl = '/Scriptgame/model/php/read_fases.php';
+    var dataUrl = '../model/php/read_fases.php';
     
 
     let id1 = 0;
@@ -3264,7 +3269,7 @@ async function buscarFaseDb(){
 
 function updateFaseNotas(id1, mundo1, fase1, likes1, dislikes1){
 
-    var dataUpdateUrl = '/Scriptgame/model/php/update_fases.php';
+    var dataUpdateUrl = '../model/php/update_fases.php';
 
     const data = {
 
@@ -3292,7 +3297,7 @@ function updateFaseNotas(id1, mundo1, fase1, likes1, dislikes1){
 }
 
 async function buscarUserFaseDb(){
-    var dataUrl = '/Scriptgame/model/php/read_userFases.php';
+    var dataUrl = '../model/php/read_userFases.php';
     
 
     let id1 = 0;
@@ -3396,7 +3401,7 @@ async function buscarUserFaseDb(){
 
 function updateUserFase(id1, id1_user, df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12, df13){
 
-    var dataUpdateUrl = '/Scriptgame/model/php/update_userFases.php';
+    var dataUpdateUrl = '../model/php/update_userFases.php';
 
     const data = {
 
@@ -3436,11 +3441,11 @@ function updateUserFase(id1, id1_user, df1, df2, df3, df4, df5, df6, df7, df8, d
 async function updateDificuldade(){
     
 
-    var dataUrl = '/Scriptgame/model/php/read_userFases.php';
+    var dataUrl = '../model/php/read_userFases.php';
     
-    var dataUrl1 = '/Scriptgame/model/php/read_fases.php';
+    var dataUrl1 = '../model/php/read_fases.php';
 
-    var dataUpdateUrl = '/Scriptgame/model/php/update_fases.php';
+    var dataUpdateUrl = '../model/php/update_fases.php';
     
 
     let id1 = 0;

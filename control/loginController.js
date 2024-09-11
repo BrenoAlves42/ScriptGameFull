@@ -26,7 +26,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
 async function fetchDados(){
-    var dataUrl = '/Scriptgame/model/php/read.php';
+    var dataUrl = '../model/php/read.php';
 
     try {
         const response = await fetch(dataUrl);

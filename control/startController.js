@@ -9,21 +9,12 @@ let user = new User("","","");
 
 let checouMensagem = false;
 
-elements.gameLogo.addEventListener('click', function() {
-    window.location.href = 'index.php';
-    
-});
-elements.buttonHome.addEventListener('click', function() {
-    window.location.href = 'index.php';
-    
-});
-
 elements.buttonLogin.addEventListener('click', function(){
-    window.location.href = './view/login.php';
+    window.location.href = '../view/login.php';
       
 });
 elements.buttonCadastro.addEventListener('click', function(){
-    window.location.href = './view/cadastro.php';
+    window.location.href = '../view/cadastro.php';
       
 })
 elements.mostrarNotas.addEventListener('click', function() {
@@ -55,7 +46,7 @@ elements.buttonJogar.addEventListener('click', function() {
            
             userObj = JSON.parse(userJson);
     
-            var dataUpdateUrl = '/Scriptgame/model/php/update.php';
+            var dataUpdateUrl = '../model/php/update.php';
     
             const data = {
         
@@ -82,7 +73,7 @@ elements.buttonJogar.addEventListener('click', function() {
                 console.error('Error:', error);
             });
         
-            location.replace('/Scriptgame/view/game.php');
+            location.replace('../view/game.php');
             
         } else {
             
@@ -99,7 +90,7 @@ elements.buttonJogar.addEventListener('click', function() {
 
 elements.buttonContinue.addEventListener('click', function() {
    
-    location.replace('/Scriptgame/view/game.php');
+    location.replace('../view/game.php');
         
      
 });
