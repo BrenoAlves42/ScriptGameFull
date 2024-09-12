@@ -33,18 +33,18 @@ async function buscarFaseDb(){
             
             dificuldade1 = item.dificuldade;
 
-            const tableBody = document.querySelector('#avalTable tbody');
-            const firstRow = tableBody.rows[counter];
+            const tableRows = document.querySelectorAll('#avalTable tbody tr');
 
+            tableRows.forEach((row, index) => {
+                const cells = row.querySelectorAll('td'); // Get all <td> cells in the current row
             
-            if (firstRow) {
-                
-                firstRow.cells[2].textContent = likes1;
-                firstRow.cells[3].textContent = dislikes1;
-                firstRow.cells[4].textContent = dificuldade1;
-                
-            }
-
+                if (index === 0) {
+                    
+                    cells[2].textContent = likes1; // Modify Likes
+                    cells[3].textContent = dislikes1; // Modify Dislikes
+                    cells[4].textContent = dificuldade1; // Modify Dificuldade
+                }
+            })
             counter++;
             
         });

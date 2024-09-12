@@ -31,13 +31,10 @@ elements.canvas.width = 640;
 elements.canvas.height = 896;
 let movimento = 4;
 let mapaAtual = 1;
-let mapaAnterior = 1;
 let attplayerPos = false;
-let firstLoad = false;
 let blocosNoWorkspace = [];
 let blocosParaCod = [];
 let blocosNoRepita = [];
-let blocosRestantes = 0;
 let blockHlCounter = 0;
 let blockHlCheck = false;
 let repitaFimAt = [];
@@ -60,7 +57,7 @@ let vidasRestantes = 0;
 let hpRestante = 0;
 let passos = 0;
 let stepCheck = false;
-let bateuEspinho = false;
+let playerDirParado = "";
 
 elements.stepButton.classList.toggle('disabled-button');
 elements.pauseButton.classList.toggle('disabled-button');
@@ -127,7 +124,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "dir";
                 toolbox.maxBlocks = 4;
-                blocosRestantes =  toolbox.maxBlocks;
                 try {
                     Blockly.getMainWorkspace().dispose();
                 } catch (error) {
@@ -148,7 +144,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "dir";
                 toolbox.maxBlocks = 7;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa02);
             }
@@ -164,7 +159,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "cim";
                 toolbox.maxBlocks = 6;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa03);
             }
@@ -180,7 +174,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "dir";
                 toolbox.maxBlocks = 5;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa04);
             }
@@ -197,7 +190,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "dir";
                 toolbox.maxBlocks = 6;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa04);
             }
@@ -213,7 +205,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "esq";
                 toolbox.maxBlocks = 2;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa06);
             }
@@ -229,7 +220,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "esq";
                 toolbox.maxBlocks = 2;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa07);
             }
@@ -245,7 +235,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "esq";
                 toolbox.maxBlocks = 5;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa08);
             }
@@ -261,7 +250,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "esq";
                 toolbox.maxBlocks = 4;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa09);
             }
@@ -277,7 +265,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "esq";
                 toolbox.maxBlocks = 4;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa10);
             }
@@ -293,7 +280,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "bx";
                 toolbox.maxBlocks = 6;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa11);
             }
@@ -312,7 +298,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "bx";
                 toolbox.maxBlocks = 6;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa12);
             }
@@ -331,7 +316,6 @@ function montarMapa(){
                 attplayerPos = true;
                 player.direcao = "dir";
                 toolbox.maxBlocks = 8;
-                blocosRestantes =  toolbox.maxBlocks;
                 Blockly.getMainWorkspace().dispose();
                 toolbox.injetar(toolboxes.toolBox_mapa13);
             }
@@ -1647,6 +1631,8 @@ function avançar(dir){
         default:
             break;
     }
+
+    
 }
 function avancarMapalDirecao(mapLogic, direcao){
 
@@ -2944,10 +2930,54 @@ function animar(){
     // elements.ctx.fillStyle = 'blue';
     // elements.ctx.fillRect(obj3.x, obj3.y, 64, 64);
   
-    if(vxl != 0 || vxr != 0 || vy != 0){
+    if(vxl != 0 || vxr != 0 || vy != 0){ 
         player.update();
     }else{
-        player.direcao = 'bx';
+        switch (mapaAtual) {
+            case 1:
+                player.direcao = 'dir';
+            break;
+            case 2:
+                player.direcao = 'dir';
+            break;
+            case 3:
+                player.direcao = 'cim';
+            break;
+            case 4:
+                player.direcao = 'dir';
+            break;
+            case 5:
+                player.direcao = 'dir';
+            break;
+            case 6:
+                player.direcao = 'esq';
+            break;
+            case 7:
+                player.direcao = 'bx';
+            break;
+            case 8:
+                player.direcao = 'bx';
+            break;
+            case 9:
+                player.direcao = 'esq';
+            break;
+            case 10:
+                player.direcao = 'esq';
+            break;
+            case 11:
+                player.direcao = 'bx';
+            break;
+            case 12:
+                player.direcao = 'bx';
+            break;
+            case 13:
+                player.direcao = 'dir';
+            break;
+        
+            default:
+                break;
+        }
+        
         player.frameAtualPlayer = 0;
     }
 
